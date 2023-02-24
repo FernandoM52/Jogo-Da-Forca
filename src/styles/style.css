@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    margin: 0 auto;
+    background-color: blue;
+    width: 1025px;
+    height: 839px;
+    display: flex;
+    flex-direction: column;
+}
+
+.jogo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forca {
+    background-color: purple;
+    margin-top: 59px;
+    margin-left: 38px;
+    width: 400px;
+    height: 467px;
+}
+
+
+.botao-escolher-palavra {
+    background-color: #27AE60;
+    color: #FFFFFF;
+    margin-top: 89px;
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+}
+
+.palavra-do-jogo {
+    color: #000000;
+    margin-top: 282px;
+    margin-right: 61px;
+    font-size: 50px;
+    line-height: 68px;
+}

@@ -1,8 +1,8 @@
-import Jogo from "./components/Jogo";
+import Jogo from "./Jogo";
 export default function App() {
   return (
-    <div >
-
+    <div className="app">
+      <Jogo />
     </div>
   );
 }
