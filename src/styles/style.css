@@ -4,7 +4,6 @@
 
 .app {
     margin: 0 auto;
-    background-color: blue;
     width: 1025px;
     height: 839px;
     display: flex;
@@ -18,28 +17,78 @@
 }
 
 .forca {
-    background-color: purple;
     margin-top: 59px;
     margin-left: 38px;
     width: 400px;
     height: 467px;
 }
 
+.forca img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.lateral-jogo {
+    width: 587px;
+    margin-top: 89px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 .botao-escolher-palavra {
     background-color: #27AE60;
     color: #FFFFFF;
-    margin-top: 89px;
     width: 200px;
     height: 60px;
-    border: none;
+    margin-right: 53px;
     border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.botao-escolher-palavra:hover {
+
+    opacity: 0.5;
 }
 
 .palavra-do-jogo {
+    word-wrap: break-word;
     color: #000000;
     margin-top: 282px;
-    margin-right: 61px;
+    padding-right: 61px;
+    font-weight: 700;
     font-size: 50px;
     line-height: 68px;
+}
+
+.letras {
+    width: 652px;
+    height: 91px;
+    margin: 70px auto;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 11px;
+}
+
+.letras button {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #9FAAB5;
+    color: #798A9F;
+    border: 1px solid #7AA7C7;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.letras button:hover {
+    opacity: 0.7;
 }
