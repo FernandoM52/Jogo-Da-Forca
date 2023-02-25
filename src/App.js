@@ -1,5 +1,5 @@
-import Jogo from "./Jogo";
-import Letras from "./Letras";
+import Jogo from "./components/Jogo";
+import Letras from "./components/Letras";
 export default function App() {
   return (
     <div className="app">

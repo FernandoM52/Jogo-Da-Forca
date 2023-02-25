@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
@@ -49,6 +53,7 @@
     font-size: 20px;
     line-height: 23px;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
 }
 
 .botao-escolher-palavra:hover {
@@ -64,6 +69,7 @@
     font-weight: 700;
     font-size: 50px;
     line-height: 68px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .letras {
