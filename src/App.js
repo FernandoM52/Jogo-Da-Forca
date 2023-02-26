@@ -9,7 +9,6 @@ export default function App() {
   const [palavra, setPalavra] = useState([]);
   const [botaoLetra, setBotaoLetra] = useState([]);
   const [letraTentada, setLetraTentada] = useState([]);
-  //const [mostrarPalavra, setMostrarPalavra] = useState([]);
   const [erro, setErro] = useState(undefined);
   const [corPalavra, setCorPalavra] = useState("black");
   const [ganhou, setGanhou] = useState(false);
@@ -32,14 +31,13 @@ export default function App() {
   }
 
   function verificaLetra(letra) {
-    setBotaoLetra(...botaoLetra, letra);
+    setBotaoLetra([...botaoLetra, letra]);
+
     const letraClicada = [...letraTentada, letra];
-    console.log(letraClicada);
     const verificaPalavra = [...palavra].every((l) => letraClicada.includes(l));
 
     if (palavra.includes(letra)) {
       setLetraTentada(letraClicada);
-      console.log(letraClicada);
     } else {
       setErro(erro + 1);
     }
