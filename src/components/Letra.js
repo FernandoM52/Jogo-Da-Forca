@@ -1,6 +1,6 @@
 export default function Letra(props) {
     return (
-        <button>
+        <button data-test="letter">
             {props.letra}
         </button>
     )
