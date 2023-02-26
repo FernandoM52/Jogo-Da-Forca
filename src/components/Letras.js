@@ -1,11 +1,18 @@
-export default function Jogo() {
-    const letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+import Letra from "./Letra"
+import { listaLetras } from "../listaLetras";
+
+export default function Jogo({ jogar }) {
 
     return (
-        <div className="letras">
-            {letras.map(l => (
-                <button>{l}</button>
+        <ul className="letras">
+            {listaLetras.map(l => (
+                <li key={l}>
+                    <Letra
+                        letra={l}
+                        jogar={jogar}
+                    />
+                </li>
             ))}
-        </div>
+        </ul>
     )
 }

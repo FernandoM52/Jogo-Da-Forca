@@ -1,4 +1,4 @@
-const palavras = [
+export const palavras = [
     "abacate", "abacaxi", "abelha", "abanador", "antologia", "amor", "aba", "abrigo", "abrir",
     "banana", "boi", "batata", "bacalhau", "bexiga", "bowl", "batedeira", "bisturi", "barreira", "banco",
     "caixa", "chantilly", "cachorro", "cuidado", "caneta", "carinho", "cabra", "cesto",
@@ -22,6 +22,4 @@ const palavras = [
     "vela", "valeta", "vacilo", "valor", "vagem", "vadiagem", "vaca", "valentia", "vidro", "valsa",
     "xadrez", "xilofone", "xarope", "xenofobia", "xereta", "xerife", "xaveco", "xixi", "xale",
     "zebra", "zagueiro", "zero", "zoeira", "zepelim", "zinco", "zumbido"
-]
-
-export default palavras
+];
