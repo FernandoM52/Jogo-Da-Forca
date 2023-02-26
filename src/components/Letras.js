@@ -1,7 +1,8 @@
 import Letra from "./Letra"
 import { listaLetras } from "../listaLetras";
 
-export default function Jogo({ jogar }) {
+export default function Jogo({ jogar, botaoLetra, chutarLetra }) {
+
 
     return (
         <ul className="letras">
@@ -10,6 +11,7 @@ export default function Jogo({ jogar }) {
                     <Letra
                         letra={l}
                         jogar={jogar}
+                        chutarLetra={chutarLetra}
                     />
                 </li>
             ))}

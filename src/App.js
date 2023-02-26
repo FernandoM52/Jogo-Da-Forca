@@ -8,14 +8,14 @@ export default function App() {
   const [jogar, setJogar] = useState(false);
   const [palavra, setPalavra] = useState([]);
   const [mostrarPalavra, setMostrarPalavra] = useState([]);
+  const [erro, setErro] = useState(undefined);
   const [corPalavra, setCorPalavra] = useState("black");
   const [botaoLetra, setBotaoLetra] = useState([]);
-  const [erro, setErro] = useState(0);
+  const [caractereCerto, setCaractereCerto] = useState("");
 
   function iniciarJogo() {
     setJogar(true);
     selecionarPalavra();
-    setBotaoLetra([]);
     setErro(0);
     setCorPalavra("black");
   }
@@ -30,6 +30,33 @@ export default function App() {
     setMostrarPalavra(palavraEscondida);
   }
 
+  function chutarLetra(l) {
+    setBotaoLetra(...botaoLetra, l);
+    console.log(botaoLetra)
+    if (caractereCerto.includes(l)) {
+      letraCorreta(l);
+    } else {
+      letraErrada(l);
+    }
+  }
+
+  function letraCorreta(l) {
+
+    const novaPalavraEscondida = [...mostrarPalavra];
+
+    palavra.forEach((l, i) => {
+
+      if (caractereCerto[i] === l) {
+        novaPalavraEscondida[i] = l;
+      }
+    });
+
+    setMostrarPalavra(novaPalavraEscondida);
+
+  }
+
+  function letraErrada(l) { }
+
   return (
     <div className="app">
       <Jogo
@@ -40,6 +67,7 @@ export default function App() {
       />
       <Letras
         jogar={jogar}
+        chutarLetra={chutarLetra}
       />
 
     </div>

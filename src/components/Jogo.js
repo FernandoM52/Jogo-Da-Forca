@@ -14,7 +14,7 @@ export default function Jogo({ iniciarJogo, mostrarPalavra, erro, corPalavra }) 
 
                 <button className="botao-escolher-palavra" data-test="choose-word" onClick={iniciarJogo}>Escolher Palavra</button>
 
-                <p className="palavra-do-jogo" data-test="word">{mostrarPalavra}</p>
+                <p className={corPalavra} data-test="word">{mostrarPalavra}</p>
 
             </div>
 

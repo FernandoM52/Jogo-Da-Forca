@@ -61,15 +61,27 @@
     opacity: 0.5;
 }
 
-.palavra-do-jogo {
-    word-wrap: break-word;
-    color: black;
+.black,
+.red,
+.green {
     margin-top: 282px;
     padding-right: 61px;
     font-weight: 700;
     font-size: 50px;
     line-height: 68px;
     font-family: 'Noto Sans', sans-serif;
+}
+
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
 }
 
 .letras {
