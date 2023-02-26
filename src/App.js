@@ -7,67 +7,75 @@ import { useState } from "react";
 export default function App() {
   const [jogar, setJogar] = useState(false);
   const [palavra, setPalavra] = useState([]);
-  const [mostrarPalavra, setMostrarPalavra] = useState([]);
+  const [botaoLetra, setBotaoLetra] = useState([]);
+  const [letraTentada, setLetraTentada] = useState([]);
+  //const [mostrarPalavra, setMostrarPalavra] = useState([]);
   const [erro, setErro] = useState(undefined);
   const [corPalavra, setCorPalavra] = useState("black");
-  const [botaoLetra, setBotaoLetra] = useState([]);
-  const [caractereCerto, setCaractereCerto] = useState("");
+  const [ganhou, setGanhou] = useState(false);
 
   function iniciarJogo() {
     setJogar(true);
     selecionarPalavra();
+    setBotaoLetra([]);
+    setLetraTentada([]);
     setErro(0);
     setCorPalavra("black");
+    setGanhou(false);
   }
 
   function selecionarPalavra() {
     const embaralhar = Math.floor(Math.random() * palavras.length - 1);
     const palavaSelecionada = palavras[embaralhar].split('');
     setPalavra(palavaSelecionada);
-
-    const palavraEscondida = [];
-    palavaSelecionada.forEach((listaLetras) => palavraEscondida.push("_ "));
-    setMostrarPalavra(palavraEscondida);
+    console.log(palavaSelecionada);
   }
 
-  function chutarLetra(l) {
-    setBotaoLetra(...botaoLetra, l);
-    console.log(botaoLetra)
-    if (caractereCerto.includes(l)) {
-      letraCorreta(l);
+  function verificaLetra(letra) {
+    setBotaoLetra(...botaoLetra, letra);
+    const letraClicada = [...letraTentada, letra];
+    console.log(letraClicada);
+    const verificaPalavra = [...palavra].every((l) => letraClicada.includes(l));
+
+    if (palavra.includes(letra)) {
+      setLetraTentada(letraClicada);
+      console.log(letraClicada);
     } else {
-      letraErrada(l);
+      setErro(erro + 1);
+    }
+    if (erro === 5) {
+      fimDeJogo(false);
+
+    } else if (verificaPalavra) {
+      fimDeJogo(true);
     }
   }
 
-  function letraCorreta(l) {
-
-    const novaPalavraEscondida = [...mostrarPalavra];
-
-    palavra.forEach((l, i) => {
-
-      if (caractereCerto[i] === l) {
-        novaPalavraEscondida[i] = l;
-      }
-    });
-
-    setMostrarPalavra(novaPalavraEscondida);
-
+  function fimDeJogo(acertou) {
+    setJogar(false);
+    setLetraTentada(palavra);
+    if (!acertou) {
+      setCorPalavra("red");
+    } else {
+      setCorPalavra("green");
+    }
   }
 
-  function letraErrada(l) { }
 
   return (
     <div className="app">
       <Jogo
         iniciarJogo={iniciarJogo}
-        mostrarPalavra={mostrarPalavra}
+        palavra={palavra}
+        letraTentada={letraTentada}
         erro={erro}
         corPalavra={corPalavra}
+        ganhou={ganhou}
       />
       <Letras
         jogar={jogar}
-        chutarLetra={chutarLetra}
+        botaoLetra={botaoLetra}
+        verificaLetra={verificaLetra}
       />
 
     </div>

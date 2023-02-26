@@ -1,7 +1,7 @@
 import Letra from "./Letra"
 import listaLetras from "../listaLetras";
 
-export default function Jogo({ jogar, botaoLetra, chutarLetra }) {
+export default function Jogo({ jogar, botaoLetra, verificaLetra }) {
 
 
     return (
@@ -11,7 +11,8 @@ export default function Jogo({ jogar, botaoLetra, chutarLetra }) {
                     <Letra
                         letra={l}
                         jogar={jogar}
-                        chutarLetra={chutarLetra}
+                        botaoLetra={botaoLetra}
+                        verificaLetra={verificaLetra}
                     />
                 </li>
             ))}

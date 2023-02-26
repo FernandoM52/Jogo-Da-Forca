@@ -1,7 +1,6 @@
 import { forca } from "../forca";
 
-export default function Jogo({ iniciarJogo, mostrarPalavra, erro, corPalavra }) {
-
+export default function Jogo({ iniciarJogo, palavra, letraTentada, erro, corPalavra, ganhou }) {
     return (
         <div className="jogo">
 
@@ -14,7 +13,7 @@ export default function Jogo({ iniciarJogo, mostrarPalavra, erro, corPalavra }) 
 
                 <button className="botao-escolher-palavra" data-test="choose-word" onClick={iniciarJogo}>Escolher Palavra</button>
 
-                <p className={corPalavra} data-test="word">{mostrarPalavra}</p>
+                <p className={corPalavra} data-test="word">{palavra.map((letra) => { return letraTentada.includes(letra) ? letra : "_ " })}</p>
 
             </div>
 
