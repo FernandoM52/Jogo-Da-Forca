@@ -1,5 +1,5 @@
 import Letra from "./Letra"
-import { listaLetras } from "../listaLetras";
+import listaLetras from "../listaLetras";
 
 export default function Jogo({ jogar, botaoLetra, chutarLetra }) {
 
