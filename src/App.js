@@ -1,6 +1,5 @@
 import Jogo from "./components/Jogo";
 import Letras from "./components/Letras";
-import listaLetras from "./listaLetras";
 import palavras from "./palavras";
 import { useState } from "react";
 

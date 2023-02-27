@@ -1,6 +1,6 @@
 import { forca } from "../forca";
 
-export default function Jogo({ iniciarJogo, palavra, letraTentada, erro, corPalavra, ganhou }) {
+export default function Jogo({ iniciarJogo, palavra, letraTentada, erro, corPalavra }) {
     return (
         <div className="jogo">
 
