@@ -8,7 +8,7 @@ export default function App() {
   const [palavra, setPalavra] = useState([]);
   const [botaoLetra, setBotaoLetra] = useState([]);
   const [letraTentada, setLetraTentada] = useState([]);
-  const [erro, setErro] = useState(undefined);
+  const [erro, setErro] = useState(0);
   const [corPalavra, setCorPalavra] = useState("black");
   const [ganhou, setGanhou] = useState(false);
   const maximoErros = 6;
