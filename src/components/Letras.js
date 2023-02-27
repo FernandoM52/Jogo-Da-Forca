@@ -1,9 +1,6 @@
-import Letra from "./Letra"
+import Letra from "./Letra";
 import listaLetras from "../listaLetras";
-
-export default function Jogo({ jogar, botaoLetra, verificaLetra }) {
-
-
+export default function Letras({ jogar, botaoLetra, verificaLetra }) {
     return (
         <ul className="letras">
             {listaLetras.map(l => (
@@ -17,5 +14,5 @@ export default function Jogo({ jogar, botaoLetra, verificaLetra }) {
                 </li>
             ))}
         </ul>
-    )
+    );
 }

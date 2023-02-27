@@ -4,5 +4,5 @@ export default function Letra({ letra, jogar, botaoLetra, verificaLetra }) {
         <button data-test="letter" disabled={botaoHabilitado ? false : true} onClick={() => verificaLetra(letra)}>
             {letra}
         </button>
-    )
-} 
+    );
+}
