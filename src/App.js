@@ -27,7 +27,6 @@ export default function App() {
     const embaralhar = Math.floor(Math.random() * palavras.length - 1);
     const palavaSelecionada = palavras[embaralhar].split('');
     setPalavra(palavaSelecionada);
-    console.log(palavaSelecionada);
   }
 
   function verificaLetra(letra) {
@@ -38,10 +37,10 @@ export default function App() {
 
     if (palavra.includes(letra)) {
       setLetraTentada(letraClicada);
-
     } else {
       const qtdeErros = erro + 1;
       setErro(qtdeErros);
+
       if (qtdeErros === maximoErros) {
         fimDeJogo(false);
       }
@@ -55,6 +54,7 @@ export default function App() {
   function fimDeJogo(acertou) {
     setJogar(false);
     setLetraTentada(palavra);
+
     if (!acertou) {
       setCorPalavra("red");
     } else {
@@ -78,7 +78,6 @@ export default function App() {
         botaoLetra={botaoLetra}
         verificaLetra={verificaLetra}
       />
-
     </div>
   );
 }
