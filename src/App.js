@@ -12,6 +12,7 @@ export default function App() {
   const [erro, setErro] = useState(undefined);
   const [corPalavra, setCorPalavra] = useState("black");
   const [ganhou, setGanhou] = useState(false);
+  const maximoErros = 6;
 
   function iniciarJogo() {
     setJogar(true);
@@ -38,13 +39,16 @@ export default function App() {
 
     if (palavra.includes(letra)) {
       setLetraTentada(letraClicada);
-    } else {
-      setErro(erro + 1);
-    }
-    if (erro === 5) {
-      fimDeJogo(false);
 
-    } else if (verificaPalavra) {
+    } else {
+      const qtdeErros = erro + 1;
+      setErro(qtdeErros);
+      if (qtdeErros === maximoErros) {
+        fimDeJogo(false);
+      }
+    }
+
+    if (verificaPalavra) {
       fimDeJogo(true);
     }
   }
